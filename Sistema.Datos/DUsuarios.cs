@@ -74,6 +74,36 @@ namespace Sistema.Datos
             }
         }
 
+        public DataTable ListarRoles()
+        {
+            SqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection sqlConn = new SqlConnection();
+
+            try
+            {
+                sqlConn = Conexion.getInstance().CrearConexion();
+                SqlCommand Comando = new SqlCommand("rol_listar", sqlConn);
+                Comando.CommandType = CommandType.StoredProcedure;
+                sqlConn.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (sqlConn.State == ConnectionState.Open)
+                {
+                    sqlConn.Close();
+                }
+            }
+        }
+
         public DataTable Buscar(string valor)
         {
             SqlDataReader Resultado;
@@ -313,5 +343,6 @@ namespace Sistema.Datos
             }
             return Respuesta;
         }
+
     }
 }

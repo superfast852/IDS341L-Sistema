@@ -18,6 +18,12 @@ namespace Sistema.Negocios
             return Datos.Listar();
         }
 
+        public static DataTable ListarRoles()
+        {
+            DUsuarios datos = new DUsuarios();
+            return datos.ListarRoles();
+        }
+
         public static DataTable Buscar(string valor)
         {
             DUsuarios Datos = new DUsuarios();

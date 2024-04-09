@@ -148,6 +148,7 @@
   <ItemGroup>
     <Compile Include="NArticulos.cs" />
     <Compile Include="NCategorias.cs" />
+    <Compile Include="NIngreso.cs" />
     <Compile Include="NPersona.cs" />
     <Compile Include="NUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Windows.Forms;
+using Sistema.Negocios;
 
 namespace Sistema.Presentacion
 {
@@ -15,6 +9,8 @@ namespace Sistema.Presentacion
         public frmRoles()
         {
             InitializeComponent();
+            dgvRoles.DataSource = NUsuarios.Listar();
+            
         }
     }
 }
