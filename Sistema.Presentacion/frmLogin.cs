@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using Sistema.Entidad;
 using Sistema.Negocios;
 
 namespace Sistema.Presentacion
@@ -42,6 +43,7 @@ namespace Sistema.Presentacion
                         frm.Estado = Convert.ToBoolean(tabla.Rows[0][4]);
                         frm.Show();
                         this.Hide();
+                        Variables.IdUsuario = frm.IdUsuario;
                     }
                 }
             } catch (Exception ex)

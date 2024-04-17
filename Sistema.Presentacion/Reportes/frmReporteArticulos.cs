@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sistema.Presentacion
+namespace Sistema.Presentacion.Reportes
 {
-    public partial class frmIngresos : Form
+    public partial class frmReporteArticulos : Form
     {
-        public frmIngresos()
+        public frmReporteArticulos()
         {
             InitializeComponent();
+            this.Controls.Add(this.reportViewer1);
         }
     }
 }

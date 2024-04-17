@@ -191,6 +191,11 @@ namespace Sistema.Presentacion
             menuStrip.Items[menus[name]].Enabled = state;
         }
 
-
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmIngreso frm = new FrmIngreso();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

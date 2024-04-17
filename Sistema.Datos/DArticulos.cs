@@ -72,6 +72,40 @@ namespace Sistema.Datos
             }
         }
 
+        public DataTable BuscarCodigo(string valor)
+        {
+            SqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection sqlConn = new SqlConnection();
+
+            try
+            {
+                sqlConn = Conexion.getInstance().CrearConexion();
+
+                SqlCommand Comando = new SqlCommand("articulo_buscar_barra", sqlConn);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@valor", SqlDbType.VarChar).Value = valor;
+
+                sqlConn.Open();
+
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (sqlConn.State == ConnectionState.Open)
+                {
+                    sqlConn.Close();
+                }
+            }
+        }
+
         // Metodo para determinar si una categoria existe
         public string Existe(string valor)
         {

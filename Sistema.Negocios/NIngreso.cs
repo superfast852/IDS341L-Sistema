@@ -4,7 +4,7 @@ using System.Data;
 
 namespace Sistema.Negocios
 {
-    internal class NIngreso
+    public class NIngreso
     {
         public static DataTable Listar()
         {
